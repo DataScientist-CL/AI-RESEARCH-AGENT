@@ -1,0 +1,28 @@
+# requirements.txt
+
+# 핵심 프레임워크
+fastapi==0.104.1
+uvicorn==0.23.2
+python-dotenv==1.0.0
+
+# LangChain
+langchain==0.1.0
+langchain-openai==0.0.5
+langchain-community==0.0.10
+langchain-core>=0.1.23
+
+# 데이터 처리
+pydantic==2.5.0
+requests==2.31.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+
+# 검색 엔진 (최신 패키지)
+ddgs>=6.0.0
+
+# 선택적 검색 API (사용 시 주석 해제)
+# google-search-results  # SerpAPI용
+# google-api-python-client  # Google Custom Search용
+
+# OpenAI
+openai>=1.10.0

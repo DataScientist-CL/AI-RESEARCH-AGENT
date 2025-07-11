@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 리서치 에이전트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 50%, #00b894 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .research-form {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #74b9ff;
+            box-shadow: 0 0 0 3px rgba(116, 185, 255, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(116, 185, 255, 0.3);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #74b9ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .results {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+
+        .results h2 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .report-content {
+            line-height: 1.8;
+            color: #444;
+            font-size: 16px;
+        }
+
+        .report-content h3 {
+            color: #0984e3;
+            margin: 25px 0 15px 0;
+            font-size: 1.4em;
+        }
+
+        .report-content p {
+            margin-bottom: 15px;
+        }
+
+        .report-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid #74b9ff;
+        }
+
+        .error {
+            background: #fee;
+            color: #c33;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #fcc;
+        }
+
+        .success-animation {
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .research-form, .results {
+                padding: 25px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI 리서치 에이전트</h1>
+            <p>최신 AI 기술 동향을 실시간으로 분석하고 보고서를 생성합니다</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>스마트 검색</h3>
+                <p>고품질 AI 전용 소스에서 최신 정보 수집</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>정확한 분석</h3>
+                <p>AI 관련성 점수로 신뢰할 수 있는 결과만 선별</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>전문 보고서</h3>
+                <p>체계적이고 포괄적인 분석 리포트 생성</p>
+            </div>
+        </div>
+
+        <div class="research-form">
+            <form id="researchForm">
+                <div class="form-group">
+                    <label for="topic">🔍 연구 주제</label>
+                    <input type="text" id="topic" name="topic" placeholder="예: 최근 AI 기술 동향, 머신러닝 발전사항, 생성형 AI 현황" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="domain">🏷️ 도메인</label>
+                    <select id="domain" name="domain" required>
+                        <option value="">도메인을 선택하세요</option>
+                        <option value="기술">기술</option>
+                        <option value="비즈니스">비즈니스</option>
+                        <option value="의료">의료</option>
+                        <option value="교육">교육</option>
+                        <option value="금융">금융</option>
+                        <option value="제조">제조</option>
+                        <option value="에너지">에너지</option>
+                        <option value="연구">연구</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    🚀 리서치 시작하기
+                </button>
+            </form>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+            <p>AI 에이전트가 최신 정보를 수집하고 분석 중입니다...</p>
+            <p><small>고품질 소스에서 데이터를 검증하는 중 (약 30-60초 소요)</small></p>
+        </div>
+
+        <div class="results" id="results">
+            <h2>📋 AI 리서치 보고서</h2>
+            <div class="report-content" id="reportContent">
+                <!-- 결과가 여기에 표시됩니다 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://127.0.0.1:8000';
+        
+        document.getElementById('researchForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const topic = document.getElementById('topic').value;
+            const domain = document.getElementById('domain').value;
+            const submitBtn = document.getElementById('submitBtn');
+            const loading = document.getElementById('loading');
+            const results = document.getElementById('results');
+            const reportContent = document.getElementById('reportContent');
+            
+            // UI 상태 변경
+            submitBtn.disabled = true;
+            submitBtn.textContent = '🔍 분석 중...';
+            loading.style.display = 'block';
+            results.style.display = 'none';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/research`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        topic: topic,
+                        domain: domain
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                // 결과 표시
+                loading.style.display = 'none';
+                reportContent.innerHTML = formatReport(data.report);
+                results.style.display = 'block';
+                results.classList.add('success-animation');
+                
+                // 결과로 스크롤
+                results.scrollIntoView({ behavior: 'smooth' });
+                
+            } catch (error) {
+                console.error('Error:', error);
+                loading.style.display = 'none';
+                reportContent.innerHTML = `
+                    <div class="error">
+                        <h3>⚠️ 오류 발생</h3>
+                        <p>리서치 중 오류가 발생했습니다: ${error.message}</p>
+                        <p><strong>해결 방법:</strong></p>
+                        <ul>
+                            <li>AI 리서치 에이전트 서버가 실행 중인지 확인하세요 (http://127.0.0.1:8000)</li>
+                            <li>네트워크 연결을 확인하세요</li>
+                            <li>잠시 후 다시 시도해보세요</li>
+                        </ul>
+                    </div>
+                `;
+                results.style.display = 'block';
+            } finally {
+                // UI 상태 복원
+                submitBtn.disabled = false;
+                submitBtn.textContent = '🚀 리서치 시작하기';
+                results.classList.remove('success-animation');
+            }
+        });
+        
+        function formatReport(reportText) {
+            // 보고서 텍스트를 HTML로 포맷팅
+            let formatted = reportText
+                .replace(/\n/g, '<br>')
+                .replace(/#+\s*([^<]+)/g, '<h3>$1</h3>')
+                .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+                .replace(/📄([^:]+):/g, '<div class="report-section"><h4>📄$1</h4>')
+                .replace(/출처:([^─]+)/g, '<p><em>출처:$1</em></p></div>')
+                .replace(/──────────────────────────────────────────────────/g, '')
+                .replace(/🔍([^<]+)/g, '<h3>🔍$1</h3>')
+                .replace(/## ([^<]+)/g, '<h3>$1</h3>')
+                .replace(/### ([^<]+)/g, '<h4>$1</h4>')
+                .replace(/🎯([^<]+)/g, '<div class="report-section"><h4>🎯$1</h4>')
+                .replace(/🔮([^<]+)/g, '<div class="report-section"><h4>🔮$1</h4>')
+                .replace(/💡([^<]+)/g, '<div class="report-section"><h4>💡$1</h4>');
+            
+            return formatted;
+        }
+
+        // 샘플 주제 제안
+        const sampleTopics = [
+            "최근 AI 기술 동향",
+            "생성형 AI 발전사항",
+            "머신러닝 최신 연구",
+            "딥러닝 혁신 기술",
+            "AI 윤리와 규제",
+            "자연어 처리 발전",
+            "컴퓨터 비전 동향",
+            "AI 하드웨어 발전"
+        ];
+
+        // 입력 필드에 포커스 시 샘플 주제 로테이션
+        let sampleIndex = 0;
+        document.getElementById('topic').addEventListener('focus', function() {
+            if (!this.value) {
+                this.placeholder = sampleTopics[sampleIndex % sampleTopics.length];
+                sampleIndex++;
+            }
+        });
+    </script>
+</body>
+</html>

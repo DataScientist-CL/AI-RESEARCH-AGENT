@@ -232,72 +232,25 @@ python -m pytest --cov=. --cov-report=html
 python -m pytest tests/integration/ -v
 ```
 
-##  기여하기
 
-프로젝트 기여를 환영합니다! 
 
-###  **기여 프로세스**
-1. **Fork** the Project
-2. **Create** your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. **Commit** your Changes (`git commit -m 'Add: AmazingFeature'`)
-4. **Push** to the Branch (`git push origin feature/AmazingFeature`)
-5. **Open** a Pull Request
 
-###  **기여 가이드라인**
-- 코드 스타일: PEP 8 준수
-- 커밋 메시지: [Conventional Commits](https://conventionalcommits.org/) 형식
-- 테스트: 새로운 기능은 테스트 코드 포함
-- 문서화: README 및 코드 주석 업데이트
 
-##  이슈 및 지원
+##  개선이 필요한 영역들
 
-###  **지원 채널**
--  **버그 리포트**: [Issues](https://github.com/your-username/ai-research-agent/issues)
--  **기능 제안**: [Discussions](https://github.com/your-username/ai-research-agent/discussions)
--  **이메일**: your-email@example.com
--  **Discord**: [AI Research Community](https://discord.gg/your-server)
 
-###  **이슈 템플릿**
--  Bug Report
--  Feature Request  
--  Documentation
--  Question
-
-##  로드맵
-
-###  **v1.1 (다음 버전)**
-- [ ]  다국어 인터페이스 (영어, 일본어, 중국어)
-- [ ]  모바일 앱 (React Native)
-- [ ]  실시간 알림 시스템
 - [ ]  고급 분석 대시보드
-
-###  **v2.0 (장기 계획)**
 - [ ]  멀티 에이전트 시스템
 - [ ]  자체 학습 알고리즘
 - [ ]  클라우드 배포 (AWS, GCP)
 - [ ]  API 생태계 구축
 
+
 ##  라이선스
 
 이 프로젝트는 **MIT License** 하에 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
 
-##  개발팀
 
-<table>
-<tr>
-<td align="center">
-<a href="https://github.com/your-username">
-<img src="https://via.placeholder.com/100x100/74b9ff/ffffff?text=You" width="100px;" alt="Your Name"/><br />
-<sub><b>Your Name</b></sub>
-</a><br />
-<sub> Full Stack Developer</sub>
-</td>
-<td align="center">
-<sub>더 많은 기여자를 찾고 있습니다!</sub><br />
-<sub> Join Us</sub>
-</td>
-</tr>
-</table>
 
 ##  감사의 말
 

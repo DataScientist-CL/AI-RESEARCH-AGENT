@@ -39,7 +39,7 @@
 ![AI Research Agent Interface](https://via.placeholder.com/800x500/74b9ff/ffffff?text=AI+Research+Agent+Interface)
 
 ###  **실시간 보고서 생성**
-![Report Generation](https://via.placeholder.com/800x400/0984e3/ffffff?text=Real-time+Report+Generation)
+<img width="769" height="815" alt="image" src="https://github.com/user-attachments/assets/334aa6cf-1ad1-4d51-920f-db048169712f" />
 
 </div>
 

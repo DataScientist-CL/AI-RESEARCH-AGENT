@@ -98,21 +98,21 @@ python -m uvicorn main:app --reload
 
 ```mermaid
 graph TB
-    A[🌐 Web Interface] --> B[🚀 FastAPI Server]
-    B --> C[🤖 AI Agent]
-    B --> D[📋 Task Manager]
-    B --> E[📦 Cache Manager]
+    A[ Web Interface] --> B[ FastAPI Server]
+    B --> C[ AI Agent]
+    B --> D[ Task Manager]
+    B --> E[ Cache Manager]
     
-    C --> F[🔍 Search Tools]
-    F --> G[🦆 DuckDuckGo]
-    F --> H[🔍 SerpAPI]
-    F --> I[📡 Google CSE]
+    C --> F[ Search Tools]
+    F --> G[ DuckDuckGo]
+    F --> H[ SerpAPI]
+    F --> I[ Google CSE]
     
-    D --> J[📊 Progress Tracking]
-    D --> K[🔄 Async Processing]
+    D --> J[ Progress Tracking]
+    D --> K[ Async Processing]
     
-    E --> L[🗄️ SQLite DB]
-    E --> M[📁 File Storage]
+    E --> L[🗄 SQLite DB]
+    E --> M[ File Storage]
 ```
 
 ## 📁 프로젝트 구조
@@ -138,7 +138,7 @@ ai-research-agent/
 <tr>
 <td valign="top" width="33%">
 
-### 🔧 **Backend**
+###  **Backend**
 - **Python 3.8+**
 - **FastAPI** - 현대적 웹 API 프레임워크
 - **LangChain** - AI 에이전트 오케스트레이션

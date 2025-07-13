@@ -17,35 +17,35 @@
 
 </div>
 
-## 🌟 프로젝트 하이라이트
+##  프로젝트 하이라이트
 
-### 💡 **핵심 가치**
-- **🎯 정확성**: AI 관련성 점수 시스템으로 신뢰할 수 있는 정보만 선별
-- **⚡ 효율성**: 비동기 처리와 캐시 시스템으로 빠른 응답 제공
-- **🎨 사용성**: 직관적인 UI/UX와 실시간 진행률 모니터링
-- **🔒 안정성**: 엔터프라이즈급 아키텍처와 완벽한 에러 처리
+###  **핵심 가치**
+- ** 정확성**: AI 관련성 점수 시스템으로 신뢰할 수 있는 정보만 선별
+- ** 효율성**: 비동기 처리와 캐시 시스템으로 빠른 응답 제공
+- ** 사용성**: 직관적인 UI/UX와 실시간 진행률 모니터링
+- ** 안정성**: 엔터프라이즈급 아키텍처와 완벽한 에러 처리
 
-### 🏆 **주요 성과**
-- ✅ **99.9% 신뢰도**: 엄격한 품질 필터링으로 최고 품질의 AI 정보만 제공
-- ✅ **50% 속도 향상**: 스마트 캐시 시스템으로 기존 대비 응답 속도 개선
-- ✅ **100% 반응형**: 모든 디바이스에서 완벽한 사용자 경험 제공
-- ✅ **엔터프라이즈 급**: 대용량 트래픽과 동시 사용자 처리 가능
+###  **주요 성과**
+-  **99.9% 신뢰도**: 엄격한 품질 필터링으로 최고 품질의 AI 정보만 제공
+-  **50% 속도 향상**: 스마트 캐시 시스템으로 기존 대비 응답 속도 개선
+-  **100% 반응형**: 모든 디바이스에서 완벽한 사용자 경험 제공
+-  **엔터프라이즈 급**: 대용량 트래픽과 동시 사용자 처리 가능
 
-## 🎥 데모 및 스크린샷
+##  데모 및 스크린샷
 
 <div align="center">
 
-### 🖥️ **메인 인터페이스**
+###  **메인 인터페이스**
 ![AI Research Agent Interface](https://via.placeholder.com/800x500/74b9ff/ffffff?text=AI+Research+Agent+Interface)
 
-### 📊 **실시간 보고서 생성**
+###  **실시간 보고서 생성**
 ![Report Generation](https://via.placeholder.com/800x400/0984e3/ffffff?text=Real-time+Report+Generation)
 
 </div>
 
-## ✨ 핵심 기능
+##  핵심 기능
 
-### 🔍 **스마트 검색 엔진**
+###  **스마트 검색 엔진**
 ```python
 # 고품질 AI 소스 우선 검색
 premium_sources = [
@@ -55,17 +55,17 @@ premium_sources = [
 ai_relevance_score = calculate_ai_score(content)  # 10점 이상만 허용
 ```
 
-### 📊 **자동 보고서 생성**
+###  **자동 보고서 생성**
 - **5단계 구조**: 개요 → 주요 발견사항 → 핵심 인사이트 → 향후 전망 → 결론
 - **실시간 진행률**: 검색(20%) → 분석(40%) → 작성(80%) → 완료(100%)
 - **다국어 지원**: 한국어/영어 하이브리드 검색 및 분석
 
-### ⚡ **고성능 아키텍처**
+###  **고성능 아키텍처**
 - **비동기 처리**: 최대 5개 작업 동시 실행
 - **캐시 시스템**: SQLite + 파일 저장, LRU 자동 정리
 - **작업 관리**: 실시간 상태 추적 및 진행률 모니터링
 
-## 🚀 빠른 시작
+##  빠른 시작
 
 ### 1️⃣ **설치**
 ```bash
@@ -88,7 +88,7 @@ python -m uvicorn main:app --reload
 # 브라우저에서 http://localhost:8000 접속
 ```
 
-## 🏗️ 시스템 아키텍처
+##  시스템 아키텍처
 
 ```mermaid
 graph TB
@@ -113,20 +113,20 @@ graph TB
 
 ```
 ai-research-agent/
-├── 🚀 main.py              # FastAPI 서버 및 API 엔드포인트
-├── 🌐 main.html            # 하늘색 테마 웹 인터페이스
-├── 🤖 agent_setup.py       # GPT-4 기반 AI 에이전트 설정
-├── 🔍 tools.py             # 멀티 검색 엔진 도구 (DuckDuckGo, SerpAPI, Google CSE)
-├── 📦 cache_manager.py     # SQLite 기반 스마트 캐시 시스템
-├── 📋 task_manager.py      # 비동기 작업 관리 및 모니터링
-├── 📝 requirements.txt     # Python 의존성 패키지
-├── 🔧 .env.example         # 환경변수 설정 예시
-├── 📖 README.md           # 프로젝트 문서 (현재 파일)
-├── 🚫 .gitignore          # Git 제외 파일 목록
-└── 📄 LICENSE             # MIT 오픈소스 라이선스
+├──  main.py              # FastAPI 서버 및 API 엔드포인트
+├──  main.html            # 하늘색 테마 웹 인터페이스
+├──  agent_setup.py       # GPT-4 기반 AI 에이전트 설정
+├──  tools.py             # 멀티 검색 엔진 도구 (DuckDuckGo, SerpAPI, Google CSE)
+├──  cache_manager.py     # SQLite 기반 스마트 캐시 시스템
+├──  task_manager.py      # 비동기 작업 관리 및 모니터링
+├──  requirements.txt     # Python 의존성 패키지
+├──  .env.example         # 환경변수 설정 예시
+├──  README.md           # 프로젝트 문서 (현재 파일)
+├──  .gitignore          # Git 제외 파일 목록
+└──  LICENSE             # MIT 오픈소스 라이선스
 ```
 
-## 🛠️ 기술 스택
+##  기술 스택
 
 <table>
 <tr>
@@ -143,7 +143,7 @@ ai-research-agent/
 </td>
 <td valign="top" width="33%">
 
-### 🎨 **Frontend**
+###  **Frontend**
 - **HTML5** - 시맨틱 마크업
 - **CSS3** - 하늘색 그라데이션 테마
 - **JavaScript ES6+** - 모던 자바스크립트
@@ -153,7 +153,7 @@ ai-research-agent/
 </td>
 <td valign="top" width="33%">
 
-### 🔍 **Search & Data**
+###  **Search & Data**
 - **DuckDuckGo Search** - 기본 검색 엔진
 - **SerpAPI** - Google 검색 결과
 - **Google CSE** - 맞춤 검색
@@ -164,19 +164,19 @@ ai-research-agent/
 </tr>
 </table>
 
-## 📊 성능 지표
+##  성능 지표
 
 | 메트릭 | 값 | 설명 |
 |--------|----|----|
-| 🎯 **정확도** | 95%+ | AI 관련성 점수 시스템 기반 |
-| ⚡ **응답속도** | < 30초 | 평균 리서치 완료 시간 |
-| 💾 **캐시 적중률** | 70%+ | 중복 검색 방지 효율성 |
-| 🔄 **동시 처리** | 5개 | 최대 동시 실행 작업 수 |
-| 📈 **가용성** | 99.9% | 시스템 안정성 |
+|  **정확도** | 95%+ | AI 관련성 점수 시스템 기반 |
+|  **응답속도** | < 30초 | 평균 리서치 완료 시간 |
+|  **캐시 적중률** | 70%+ | 중복 검색 방지 효율성 |
+|  **동시 처리** | 5개 | 최대 동시 실행 작업 수 |
+|  **가용성** | 99.9% | 시스템 안정성 |
 
-## 🔧 고급 설정
+##  고급 설정
 
-### 📡 **추가 검색 API 설정** (선택사항)
+###  **추가 검색 API 설정** (선택사항)
 ```env
 # 더 나은 검색 결과를 위한 추가 API
 SERPAPI_API_KEY=your-serpapi-key              # Google 검색 결과 향상
@@ -184,7 +184,7 @@ GOOGLE_API_KEY=your-google-api-key            # Google Custom Search
 GOOGLE_CSE_ID=your-custom-search-engine-id    # 맞춤 검색 엔진
 ```
 
-### ⚙️ **시스템 튜닝**
+###  **시스템 튜닝**
 ```python
 # cache_manager.py
 cache_manager = CacheManager(
@@ -198,12 +198,12 @@ task_manager = TaskManager(
 )
 ```
 
-## 📚 API 문서
+##  API 문서
 
 서버 실행 후 자동 생성되는 API 문서를 확인하세요:
 
-- **🔥 Swagger UI**: http://localhost:8000/docs
-- **📖 ReDoc**: http://localhost:8000/redoc
+- ** Swagger UI**: http://localhost:8000/docs
+- ** ReDoc**: http://localhost:8000/redoc
 
 ### 주요 엔드포인트
 
@@ -213,7 +213,7 @@ task_manager = TaskManager(
 | `POST` | `/research` | AI 리서치 실행 |
 | `GET` | `/health` | 시스템 상태 체크 |
 
-## 🧪 테스트
+##  테스트
 
 ```bash
 # 단위 테스트 실행
@@ -226,56 +226,56 @@ python -m pytest --cov=. --cov-report=html
 python -m pytest tests/integration/ -v
 ```
 
-## 🤝 기여하기
+##  기여하기
 
 프로젝트 기여를 환영합니다! 
 
-### 📋 **기여 프로세스**
+###  **기여 프로세스**
 1. **Fork** the Project
 2. **Create** your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. **Commit** your Changes (`git commit -m 'Add: AmazingFeature'`)
 4. **Push** to the Branch (`git push origin feature/AmazingFeature`)
 5. **Open** a Pull Request
 
-### 🎯 **기여 가이드라인**
+###  **기여 가이드라인**
 - 코드 스타일: PEP 8 준수
 - 커밋 메시지: [Conventional Commits](https://conventionalcommits.org/) 형식
 - 테스트: 새로운 기능은 테스트 코드 포함
 - 문서화: README 및 코드 주석 업데이트
 
-## 🐛 이슈 및 지원
+##  이슈 및 지원
 
-### 📞 **지원 채널**
-- 🐛 **버그 리포트**: [Issues](https://github.com/your-username/ai-research-agent/issues)
-- 💡 **기능 제안**: [Discussions](https://github.com/your-username/ai-research-agent/discussions)
-- 📧 **이메일**: your-email@example.com
-- 💬 **Discord**: [AI Research Community](https://discord.gg/your-server)
+###  **지원 채널**
+-  **버그 리포트**: [Issues](https://github.com/your-username/ai-research-agent/issues)
+-  **기능 제안**: [Discussions](https://github.com/your-username/ai-research-agent/discussions)
+-  **이메일**: your-email@example.com
+-  **Discord**: [AI Research Community](https://discord.gg/your-server)
 
-### 🏷️ **이슈 템플릿**
-- 🐛 Bug Report
-- ✨ Feature Request  
-- 📖 Documentation
-- ❓ Question
+###  **이슈 템플릿**
+-  Bug Report
+-  Feature Request  
+-  Documentation
+-  Question
 
-## 📈 로드맵
+##  로드맵
 
-### 🎯 **v1.1 (다음 버전)**
-- [ ] 🌍 다국어 인터페이스 (영어, 일본어, 중국어)
-- [ ] 📱 모바일 앱 (React Native)
-- [ ] 🔔 실시간 알림 시스템
-- [ ] 📊 고급 분석 대시보드
+###  **v1.1 (다음 버전)**
+- [ ]  다국어 인터페이스 (영어, 일본어, 중국어)
+- [ ]  모바일 앱 (React Native)
+- [ ]  실시간 알림 시스템
+- [ ]  고급 분석 대시보드
 
-### 🚀 **v2.0 (장기 계획)**
-- [ ] 🤖 멀티 에이전트 시스템
-- [ ] 🧠 자체 학습 알고리즘
-- [ ] ☁️ 클라우드 배포 (AWS, GCP)
-- [ ] 🔗 API 생태계 구축
+###  **v2.0 (장기 계획)**
+- [ ]  멀티 에이전트 시스템
+- [ ]  자체 학습 알고리즘
+- [ ]  클라우드 배포 (AWS, GCP)
+- [ ]  API 생태계 구축
 
-## 📄 라이선스
+##  라이선스
 
 이 프로젝트는 **MIT License** 하에 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
 
-## 👨‍💻 개발팀
+##  개발팀
 
 <table>
 <tr>
@@ -284,16 +284,16 @@ python -m pytest tests/integration/ -v
 <img src="https://via.placeholder.com/100x100/74b9ff/ffffff?text=You" width="100px;" alt="Your Name"/><br />
 <sub><b>Your Name</b></sub>
 </a><br />
-<sub>💻 Full Stack Developer</sub>
+<sub> Full Stack Developer</sub>
 </td>
 <td align="center">
 <sub>더 많은 기여자를 찾고 있습니다!</sub><br />
-<sub>🤝 Join Us</sub>
+<sub> Join Us</sub>
 </td>
 </tr>
 </table>
 
-## 🙏 감사의 말
+##  감사의 말
 
 이 프로젝트는 다음 오픈소스 프로젝트들의 도움으로 만들어졌습니다:
 
@@ -302,18 +302,8 @@ python -m pytest tests/integration/ -v
 - [**OpenAI**](https://openai.com) - GPT-4 언어 모델 제공
 - [**Beautiful Soup**](https://www.crummy.com/software/BeautifulSoup/) - HTML 파싱 라이브러리
 
-## 📊 GitHub 통계
-
-![GitHub stars](https://img.shields.io/github/stars/your-username/ai-research-agent?style=social)
-![GitHub forks](https://img.shields.io/github/forks/your-username/ai-research-agent?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/your-username/ai-research-agent?style=social)
 
 ---
 
-<div align="center">
-
-### ⭐ **이 프로젝트가 도움이 되었다면 스타를 눌러주세요!**
-
-**Made with ❤️ by [Your Name](https://github.com/your-username)**
 
 </div>

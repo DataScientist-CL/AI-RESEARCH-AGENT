@@ -1,6 +1,8 @@
 # 🤖 AI Research Agent
 
 > **차세대 인공지능 리서치 플랫폼** - 최신 AI 기술 동향을 실시간으로 분석하고 전문적인 보고서를 자동 생성하는 엔터프라이즈급 AI 에이전트
+>
+> ###  **메인 인터페이스**
 <img width="1115" height="841" alt="image" src="https://github.com/user-attachments/assets/df4c523e-01e8-4687-a449-2a71e539c715" />
 
 <div align="center">
@@ -35,8 +37,12 @@
 
 <div align="center">
 
-###  **메인 인터페이스**
-![AI Research Agent Interface](https://via.placeholder.com/800x500/74b9ff/ffffff?text=AI+Research+Agent+Interface)
+
+
+
+<img width="975" height="394" alt="image" src="https://github.com/user-attachments/assets/f9ef15f9-6d3d-442d-8fc9-5520b0158ad4" />
+
+
 
 ###  **실시간 보고서 생성**
 <img width="769" height="815" alt="image" src="https://github.com/user-attachments/assets/334aa6cf-1ad1-4d51-920f-db048169712f" />
